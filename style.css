@@ -1,0 +1,124 @@
+:root {
+  --wi: 300px;
+  --he: var(--wi);
+  --rad: var(--he);
+
+  --wi_2: calc(var(--wi) / 5 * 4.6);
+  --he_2: var(--wi_2);
+  --rad_2: calc(var(--he_2));
+
+  --fire_damo: #111117;
+  --fire_limo: #111117;
+
+  --brd_light: var(--fire_limo);
+  --brd_dark: var(--fire_damo);
+
+  --bg_l8: var(--fire_limo);
+  --bg_dark: var(--fire_damo);
+
+  /* animation */
+
+  --anim_1: anim_A 1s linear infinite;
+  --anim_2: anim_B 2s linear infinite;
+  /* --anim_3: anim_C 2800ms linear infinite; */
+}
+
+body {
+  background: var(--bg_l8) !important;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+@keyframes anim_C {
+  0% {
+    left: 0;
+  }
+
+  25% {
+    left: -200;
+  }
+
+  50% {
+    left: 200;
+  }
+
+  75% {
+    left: -200;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes anim_B {
+  0% {
+    /* background: var(--linear-1); */
+    background: linear-gradient(
+      30deg,
+      red,
+      blue,
+      var(--bg_dark),
+      var(--bg_dark),
+      var(--bg_dark)
+    );
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+    background: linear-gradient(
+      30deg,
+      rgb(255, 81, 0),
+      rgb(0, 255, 242),
+      var(--bg_dark),
+      var(--bg_dark),
+      var(--bg_dark)
+    );
+  }
+}
+
+.buttons {
+  text-align: center;
+  display: none;
+}
+
+.btn {
+  padding: 16 24;
+  border-radius: calc(var(--wi) / 30);
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.127);
+  background: var(--brd_dark);
+  font-size: calc(var(--wi) / 18);
+  text-transform: capitalize;
+}
+
+/* animation */
+
+.loader__border {
+  width: var(--wi);
+  height: var(--he);
+  /* background: var(--bg_dark); */
+  background: linear-gradient(
+    30deg,
+    red,
+    blue,
+    var(--bg_dark),
+    var(--bg_dark),
+    var(--bg_dark)
+  );
+  border-radius: var(--rad);
+  animation: var(--anim_2);
+}
+
+.fill__remover {
+  position: absolute;
+  height: var(--he_2);
+  width: var(--wi_2);
+  border-radius: var(--rad_2);
+  background: var(--bg_l8);
+  /* animation: var(--anim_2); */
+}
