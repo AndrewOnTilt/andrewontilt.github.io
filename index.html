@@ -1,9 +1,69 @@
-<html>
-    <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8320259721016438"
-    crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <h1>ciao</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatroom</title>
+  <style>
+    #chatbox {
+      height: 300px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+
+    #inputBox {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="nameInput">
+  <label for="name">Inserisci il tuo nome: </label>
+  <input type="text" id="name">
+  <button onclick="enterChat()">Entra nella chat</button>
+</div>
+
+<div id="chatbox" style="display: none;"></div>
+
+<div id="inputBox" style="display: none;">
+  <input type="text" id="messageInput" placeholder="Scrivi un messaggio...">
+  <button onclick="sendMessage()">Invia</button>
+</div>
+
+<script>
+  function enterChat() {
+    var nameInput = document.getElementById('name');
+    var chatbox = document.getElementById('chatbox');
+    var inputBox = document.getElementById('inputBox');
+
+    if (nameInput.value.trim() !== '') {
+      // Nascondi il campo di input del nome e mostra la chatbox e l'input del messaggio
+      document.getElementById('nameInput').style.display = 'none';
+      chatbox.style.display = 'block';
+      inputBox.style.display = 'block';
+
+      // Aggiungi un messaggio di benvenuto
+      chatbox.innerHTML += '<p><strong>Sistema:</strong> Benvenuto, ' + nameInput.value + '!</p>';
+    }
+  }
+
+  function sendMessage() {
+    var messageInput = document.getElementById('messageInput');
+    var chatbox = document.getElementById('chatbox');
+
+    if (messageInput.value.trim() !== '') {
+      // Aggiungi il messaggio alla chatbox
+      chatbox.innerHTML += '<p><strong>' + document.getElementById('name').value + ':</strong> ' + messageInput.value + '</p>';
+
+      // Pulisci il campo di input del messaggio
+      messageInput.value = '';
+
+      // Scrolla automaticamente verso il basso
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  }
+</script>
+
+</body>
 </html>
