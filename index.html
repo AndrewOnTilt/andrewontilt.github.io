@@ -1,104 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebSocket Chatroom</title>
-  <style>
-    #chatbox {
-      height: 300px;
-      border: 1px solid #ccc;
-      overflow-y: scroll;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    #inputBox {
-      margin-top: 10px;
-    }
-  </style>
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #3498db;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>Home Page</title>
 </head>
 <body>
 
-<div id="nameInput">
-  <label for="name">Inserisci il tuo nome: </label>
-  <input type="text" id="name">
-  <button onclick="startChat()">Entra nella chat</button>
-</div>
+    <header>
+        <h1>Benvenuto sulla Tua Home Page</h1>
+    </header>
 
-<div id="chatbox" style="display: none;"></div>
+    <section>
+        <h2>Contenuto Principale</h2>
+        <p>Questo è un esempio di home page con HTML e CSS incorporati.</p>
+        <p>Puoi personalizzarla con il tuo contenuto.</p>
+    </section>
 
-<div id="inputBox" style="display: none;">
-  <input type="text" id="messageInput" placeholder="Scrivi un messaggio...">
-  <button onclick="sendMessage()">Invia</button>
-</div>
-
-<script>
-  // Variabili globali
-  var nameInput = document.getElementById('name');
-  var chatbox = document.getElementById('chatbox');
-  var inputBox = document.getElementById('inputBox');
-  var ws;
-
-  function startChat() {
-    if (nameInput.value.trim() !== '') {
-      document.getElementById('nameInput').style.display = 'none';
-      chatbox.style.display = 'block';
-      inputBox.style.display = 'block';
-
-      chatbox.innerHTML += '<p><strong>Sistema:</strong> Benvenuto, ' + nameInput.value + '!</p>';
-
-      // Connessione al server WebSocket
-      ws = new WebSocket("ws://" + window.location.host);
-
-      ws.onmessage = function(event) {
-        var data = JSON.parse(event.data);
-        displayMessage(data.sender, data.message);
-      };
-    }
-  }
-
-  function sendMessage() {
-    var messageInput = document.getElementById('messageInput');
-
-    if (messageInput.value.trim() !== '') {
-      var message = {
-        sender: nameInput.value,
-        message: messageInput.value
-      };
-
-      // Invia il messaggio al server WebSocket
-      ws.send(JSON.stringify(message));
-
-      displayMessage(message.sender, message.message);
-      messageInput.value = '';
-    }
-  }
-
-  function displayMessage(sender, message) {
-    chatbox.innerHTML += '<p><strong>' + sender + ':</strong> ' + message + '</p>';
-    chatbox.scrollTop = chatbox.scrollHeight;
-  }
-</script>
-
-<script>
-  // Codice del server WebSocket incorporato nel client (solo per scopi di dimostrazione)
-  const server = new (require('http').Server)();
-  const wss = new (require('ws')).Server({ server });
-
-  wss.on('connection', (ws) => {
-    ws.on('message', (message) => {
-      // Inoltra il messaggio a tutti i client connessi
-      wss.clients.forEach((client) => {
-        if (client !== ws && client.readyState === WebSocket.OPEN) {
-          client.send(message);
-        }
-      });
-    });
-  });
-
-  server.listen(80, () => {
-    console.log('Server listening on http://localhost:3000');
-  });
-</script>
+    <footer>
+        <p>&copy; 2023-24 Tutti i diritti riservati.</p>
+    </footer>
 
 </body>
 </html>
