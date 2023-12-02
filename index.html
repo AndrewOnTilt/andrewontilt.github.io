@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatroom</title>
+  <title>WebSocket Chatroom</title>
   <style>
     #chatbox {
       height: 300px;
@@ -21,7 +21,7 @@
 <div id="nameInput">
   <label for="name">Inserisci il tuo nome: </label>
   <input type="text" id="name">
-  <button onclick="enterChat()">Entra nella chat</button>
+  <button onclick="startChat()">Entra nella chat</button>
 </div>
 
 <div id="chatbox" style="display: none;"></div>
@@ -32,37 +32,72 @@
 </div>
 
 <script>
-  function enterChat() {
-    var nameInput = document.getElementById('name');
-    var chatbox = document.getElementById('chatbox');
-    var inputBox = document.getElementById('inputBox');
+  // Variabili globali
+  var nameInput = document.getElementById('name');
+  var chatbox = document.getElementById('chatbox');
+  var inputBox = document.getElementById('inputBox');
+  var ws;
 
+  function startChat() {
     if (nameInput.value.trim() !== '') {
-      // Nascondi il campo di input del nome e mostra la chatbox e l'input del messaggio
       document.getElementById('nameInput').style.display = 'none';
       chatbox.style.display = 'block';
       inputBox.style.display = 'block';
 
-      // Aggiungi un messaggio di benvenuto
       chatbox.innerHTML += '<p><strong>Sistema:</strong> Benvenuto, ' + nameInput.value + '!</p>';
+
+      // Connessione al server WebSocket
+      ws = new WebSocket("ws://" + window.location.host);
+
+      ws.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+        displayMessage(data.sender, data.message);
+      };
     }
   }
 
   function sendMessage() {
     var messageInput = document.getElementById('messageInput');
-    var chatbox = document.getElementById('chatbox');
 
     if (messageInput.value.trim() !== '') {
-      // Aggiungi il messaggio alla chatbox
-      chatbox.innerHTML += '<p><strong>' + document.getElementById('name').value + ':</strong> ' + messageInput.value + '</p>';
+      var message = {
+        sender: nameInput.value,
+        message: messageInput.value
+      };
 
-      // Pulisci il campo di input del messaggio
+      // Invia il messaggio al server WebSocket
+      ws.send(JSON.stringify(message));
+
+      displayMessage(message.sender, message.message);
       messageInput.value = '';
-
-      // Scrolla automaticamente verso il basso
-      chatbox.scrollTop = chatbox.scrollHeight;
     }
   }
+
+  function displayMessage(sender, message) {
+    chatbox.innerHTML += '<p><strong>' + sender + ':</strong> ' + message + '</p>';
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+</script>
+
+<script>
+  // Codice del server WebSocket incorporato nel client (solo per scopi di dimostrazione)
+  const server = new (require('http').Server)();
+  const wss = new (require('ws')).Server({ server });
+
+  wss.on('connection', (ws) => {
+    ws.on('message', (message) => {
+      // Inoltra il messaggio a tutti i client connessi
+      wss.clients.forEach((client) => {
+        if (client !== ws && client.readyState === WebSocket.OPEN) {
+          client.send(message);
+        }
+      });
+    });
+  });
+
+  server.listen(80, () => {
+    console.log('Server listening on http://localhost:3000');
+  });
 </script>
 
 </body>
