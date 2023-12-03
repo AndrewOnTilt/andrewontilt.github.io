@@ -1,85 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <style>
         body {
+            background-color: #1a1a1a;
+            color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #fff;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
         }
 
         nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
         }
 
         nav a {
+            color: #fff;
             text-decoration: none;
-            color: #fff;
             margin: 0 15px;
-            font-weight: bold;
+            font-size: 18px;
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 25px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
+        main {
             text-align: center;
-            padding: 1em;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 50px;
         }
-        #imgsu{
-            height: 200px;
-            width: 250px;
-            border-radius: 25px;
+
+        .rectangle {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .rectangle h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .rectangle p {
+            color: #ccc;
+            font-size: 16px;
         }
     </style>
-    <title>La Tua Home Page</title>
 </head>
 <body>
 
-    <header>
-        <h1>Benvenuto! Accomodati pure.</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="videos">Videos</a>
-            <a href="shop">More</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="coomingsoon">Shop</a>
+        <a href="coomingsoon">Altro</a>
+    </nav>
 
-    <section>
-        <center>
-            <img src="Assets/steven think.gif" id="imgsu">
-        </center>
-        <h2>Notizie - 02/12/2023</h2>
-        <p>per ora non c'è nessua notizia...</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 La Tua Home Page. Tutti i diritti riservati.</p>
-    </footer>
+    <main>
+        <div class="rectangle">
+            <h2>Notizie</h2>
+            <p>Nessuna notizia al momento.</p>
+        </div>
+    </main>
 
 </body>
 </html>
