@@ -19,26 +19,27 @@
             padding: 1em;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
         section {
-            max-width: 800px;
-            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .option {
+            width: 45%;
+            margin: 10px;
             padding: 20px;
             background-color: #333;
-            border-radius: 25px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -50,33 +51,33 @@
             bottom: 0;
             width: 100%;
         }
-        #imgsu{
-            height: 50px;
-            width: 25px;
-            border-radius: 25px;
-        }
     </style>
-    <title>La Tua Home Page</title>
+    <title>è ora di scegliere...</title>
 </head>
 <body>
 
     <header>
-        <h1>Benvenuto! Accomodati pure.</h1>
-        <nav>
-            <a href="home">Home</a>
-            <a href="videos">Videos</a>
-            <a href="shop">More</a>
-        </nav>
+        <h1>Scegli cosa vuoi guardare...</h1>
     </header>
 
     <section>
-        <img src="Assets/steven think.gif" id="imgsu">
-        <h2>Notizie - 02/12/2023</h2>
-        <p>per ora non c'è nessua notizia...</p>
+        <a href="videos_SU" class="option">
+            <img src="Assets/SU.webp" alt="Opzione 1">
+            <h2>Steven Universe</h2>
+            <p>Unisciti subito al fantastico mondo delle Crystal Gems</p>
+        </a>
+
+        <a href="videos_HB" class="option">
+            <img src="Assets/Helluvabosstitlecard.png" alt="Opzione 2">
+            <h2>Halluva Boss</h2>
+            <p>Cooming Soon</p>
+        </a>
+        
+        <!-- Aggiungi più opzioni secondo necessità -->
     </section>
 
     <footer>
-        <p>&copy; 2023 La Tua Home Page. Tutti i diritti riservati.</p>
+        <p>&copy; 2023 | Tutti i diritti riservati.</p>
     </footer>
 
 </body>
