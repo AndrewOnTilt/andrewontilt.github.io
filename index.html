@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Tua Pagina</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
+    nav {
+      background-color: #141414;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-weight: bold;
+    }
 
-        main {
-            text-align: center;
-            margin-top: 50px;
-        }
+    nav a:hover {
+      border-bottom: 2px solid #fff;
+    }
 
-        .rectangle {
-            background-color: #555;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
-            margin: 20px auto;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        .rectangle h2 {
-            color: #fff;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .rectangle p {
-            color: #ccc;
-            font-size: 16px;
-        }
-    </style>
+    .main-content {
+      text-align: center;
+      padding: 50px 0;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <div class="container">
+      <a href="#">Home</a>
+      <a href="coomingsoon">Prodotti</a>
+      <a href="coomingsoon">Servizi</a>
+      <a href="coomingsoon">Contatti</a>
+    </div>
+  </nav>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="coomingsoon">Shop</a>
-        <a href="coomingsoon">Altro</a>
-    </nav>
-
-    <main>
-        <div class="rectangle">
-            <h2>Notizie</h2>
-            <p>Nessuna notizia al momento.</p>
-        </div>
-    </main>
-
+  <div class="container">
+    <div class="main-content">
+      <h1>Benvenuto sulla Tua Pagina</h1>
+      <p>Esplora i nostri fantastici prodotti e servizi!</p>
+    </div>
+  </div>
 </body>
 </html>
