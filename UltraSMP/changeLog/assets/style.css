@@ -1,0 +1,51 @@
+
+body {
+    background-color: rgb(56, 56, 56);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 14px;
+    margin-top: 20px;
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    margin-right: 10px;
+}
+
+li:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+li:nth-child(even):before {
+    background-color: #999;
+}
