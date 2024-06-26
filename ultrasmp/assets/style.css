@@ -63,6 +63,7 @@ h1 {
   --gray: #d8d8d8;
   --green: #3fd50f;
   --yellow: #ecc900;
+  --red: #aa2424;
   --discord: #5865f2;
   --instagram1: #cf0057;
   --instagram2: #8a2bc9;
@@ -96,16 +97,15 @@ button:hover {
 }
 
 .btn1 {
-  background-color: var(--discord);
-  -webkit-filter: drop-shadow(8px 8px 1px #2b3492);
-          filter: drop-shadow(8px 8px 1px #2b3492);
+  background-color: var(--red);
+  -webkit-filter: drop-shadow(8px 8px 1px #7a1a1a);
+          filter: drop-shadow(8px 8px 1px #7a1a1a);
 }
 
 .btn1:hover {
-  -webkit-filter: drop-shadow(0 0 0 #2b3492);
-          filter: drop-shadow(0 0 0 #2b3492);
+  -webkit-filter: drop-shadow(0 0 0 #7a1a1a);
+          filter: drop-shadow(0 0 0 #7a1a1a);
 }
-
 .btn2 {
   background-color: var(--yellow);
   -webkit-filter: drop-shadow(8px 8px 1px #666008);
@@ -292,10 +292,12 @@ h4:hover {
 /*glow for webkit*/
 @-webkit-keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+ 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+ 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
   }
 }
 
@@ -304,10 +306,12 @@ h4:hover {
 /*glow*/
 @keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+ 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+ 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
   }
 }
 /*# sourceMappingURL=style.css.map */
