@@ -18,14 +18,15 @@
         }
         .rank {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
-            padding: 20px 0;
+            gap: 20px;
         }
         .item {
             background-color: #222;
             border-radius: 10px;
             padding: 20px;
-            width: 30%;
+            width: calc(33% - 40px); /* 33% width minus gap */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s;
         }
@@ -52,10 +53,6 @@
             <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/texture'">
                 <img src="https://andrewontilt.github.io/ultrasmp/assets/icon.png" alt="Texturelogo">
                 <h3>UltraSMP Pack</h3>
-            </div>
-            <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/coomingsoon'">
-                <img src="ariel.png" alt="Cooming Soon">
-                <h3>Cooming Soon</h3>
             </div>
             <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/coomingsoon'">
                 <img src="ariel.png" alt="Cooming Soon">
