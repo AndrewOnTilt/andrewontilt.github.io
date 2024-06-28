@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pachetti | UltraSMP</title>
+    <style>
+        body {
+            background-color: #2a2e35;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .rank {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        .item {
+            background-color: #3b4049;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s;
+        }
+        .rank-item:hover {
+            transform: scale(1.05);
+        }
+        .rank-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .rank-item h3 {
+            margin: 10px 0;
+        }
+        .rank-item p {
+            margin: 10px 0;
+        }
+        .rank-item button {
+            background-color: #00aaff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        .rank-item button:hover {
+            background-color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pachetti</h1>
+        <div class="rank">
+            <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti'">
+                <img src="https://andrewontilt.github.io/ultrasmp/assets/icon.png" alt="Texturelogo">
+                <h3>UltraSMP Pack</h3>
+            </div>
+            <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/coomingsoon'">
+                <img src="ariel.png" alt="Cooming Soon">
+                <h3>Cooming Soon</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
