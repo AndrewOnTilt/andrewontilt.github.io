@@ -3,61 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="texture/assets/icon.png"> 
-    <title>Pachetti | UltraSMP</title>
+    <title>Pacchetti e Avvisi</title>
     <style>
         body {
-            background-color: #121212;
-            color: #fff;
             font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .rank {
+            background-color: #1c1c1c;
+            color: white;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        .item {
-            background-color: #222;
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            border: 2px solid #ccc;
             border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .left-panel {
+            width: 30%;
+            background-color: #2b2b2b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-right: 2px solid #ccc;
+        }
+
+        .left-panel .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-panel .item {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .left-panel .item:hover {
+            background-color: #444;
+        }
+
+        .left-panel .item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .left-panel .item span {
+            font-size: 18px;
+        }
+
+        .right-panel {
+            width: 70%;
             padding: 20px;
-            width: calc(33% - 40px); /* 33% width minus gap */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.2s;
+            background-color: #2b2b2b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .item:hover {
-            transform: scale(1.05);
+
+        .right-panel .header {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        .item img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-        .item h3 {
-            margin: 10px 0;
-        }
-        .item p {
-            margin: 10px 0;
+
+        .right-panel .content {
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Pachetti</h1>
-        <div class="rank">
+        <div class="left-panel">
+            <div class="header">Pacchetti</div>
             <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/texture'">
-                <img src="https://andrewontilt.github.io/ultrasmp/assets/icon.png" alt="Texturelogo">
-                <h3>UltraSMP Pack</h3>
+                <img src="https://andrewontilt.github.io/ultrasmp/assets/icon.png" alt="UltraSMP Pack">
+                <span style="color: orange;">UltraSMP Pack</span>
             </div>
-            <div class="item" onclick="window.location.href='https://andrewontilt.github.io/ultrasmp/pachetti/coomingsoon'">
-                <img src="ariel.png" alt="Cooming Soon">
-                <h3>Cooming Soon</h3>
+            <div class="item">
+                <span>Coming Soon</span>
             </div>
+        </div>
+        <div class="right-panel">
+            <div class="header">Avvisi</div>
+            <div class="content">Nessun Avviso al momento</div>
         </div>
     </div>
 </body>
