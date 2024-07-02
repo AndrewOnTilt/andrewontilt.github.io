@@ -15,12 +15,10 @@ prevButton.addEventListener('click', () => {
     currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
     videoPlayer.src = videos[currentVideoIndex];
     videoPlayer.play();
-    playPauseButton.textContent = 'Pausa';
 });
 
 nextButton.addEventListener('click', () => {
     currentVideoIndex = (currentVideoIndex + 1) % videos.length;
     videoPlayer.src = videos[currentVideoIndex];
     videoPlayer.play();
-    playPauseButton.textContent = 'Pausa';
 });
