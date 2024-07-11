@@ -268,12 +268,12 @@
     max-height: 250px;
     position: relative;
     z-index: 1;
-    right: 100px;
+    right: 70px;
 }
 
 #about .content .right .img-background {
     position: absolute;
-    width: 210px;
+    width: 250px;
     height: calc(100% - 40px);
     border-radius: 40px 3px;
     background: var(--main-color);
