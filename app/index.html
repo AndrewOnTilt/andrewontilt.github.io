@@ -103,9 +103,9 @@
             var password = document.getElementById("password").value;
 
             if (nickname === "Admin" && password === "admin") {
-                window.location.href = "/admin";
+                window.location.href = "/app/admin";
             } else if (nickname === "User" && password === "user") {
-                window.location.href = "/user";
+                window.location.href = "/app/user";
             } else {
                 alert("Credenziali non valide");
                 return false;
