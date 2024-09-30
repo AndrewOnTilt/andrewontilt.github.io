@@ -6,15 +6,17 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
+    /*background-color: #1e1e1e;*/
     color: #e0e0e0;
+    background-image: url('https://andrewontilt.github.io/assets/ultrapvp/sprites/hp_bg.png');
+    background-size: cover;
 }
 
 .container {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #2c2c2c;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -94,15 +96,16 @@ body {
 }
 
 .version-table th {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
+    
 }
 
 .version-table td {
-    background-color: #2e2e2e;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .version-table tr:hover {
-    background-color: #3a3a3a;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .version-table td:nth-child(4) {
