@@ -3,169 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" type="image/png">
     <title>Ultra Packs</title>
-    <style>
-        /* Impostazioni di base per lo stile moderno e tema scuro */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #f5f5f5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: url('https://andrewontilt.github.io/assets/ultrasmp/sprites/smp_background.jpeg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        header {
-            background-color: #1f1f1f;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        header h1 {
-            font-size: 20px;
-            color: #ffffff;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 10px;
-            font-size: 18px;
-            background-color: #007bff;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #0056b3;
-        }
-
-        .main-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Trasparenza per far vedere lo sfondo */
-            padding: 40px;
-            border-radius: 15px;
-            margin: auto;
-        }
-
-        .box {
-            width: 300px;
-            padding: 20px;
-            background-color: #1f1f1f;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .box img {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 20px;
-        }
-
-        .box h2 {
-            margin-bottom: 10px;
-            font-size: 22px;
-            color: #ffffff;
-        }
-
-        .box p {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #b0b0b0;
-        }
-
-        .button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #1f1f1f;
-            padding: 10px 0;
-            text-align: center;
-            margin-top: auto;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        footer p {
-            color: #b0b0b0;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <audio id="my-audio" src="sound.mp3"></audio>
-    <script>
+    <style>
+        /* Impostazioni Generali */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-        // Aggiungi evento per la pressione del tasto "M"
-        document.addEventListener('keydown', function(event) {
-            if (event.key.toLowerCase() === 'm') {
-                var audio = document.getElementById('my-audio');
-                audio.play(); // Avvia la riproduzione dell'audio
-            }
-        });
-    </script>
+        h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Header con il titolo e la barra di navigazione -->
-    <header>
-        <h1>Ultra Packs</h1>
-    </header>
+        /* Contenitore principale */
+        .main-container {
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+        }
 
-    <!-- Contenuto principale con i due riquadri -->
+        /* Titolo e sottotitolo */
+        .title {
+            font-size: 3rem;
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #bbb;
+            margin-bottom: 40px;
+        }
+
+        /* Sezione pacchetti */
+        .packs-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Card dei pacchetti */
+        .pack-card {
+            background: #282828;
+            border-radius: 15px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pack-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header della Card */
+        .card-header h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #ff5e7e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Corpo della Card */
+        .card-body {
+            margin-top: 10px;
+        }
+
+        .card-body .author {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Pulsante */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #00d4ff, #ff5e7e);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #ff5e7e, #00d4ff);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+    </style>
+
     <div class="main-container">
-        <!-- Primo Riquadro -->
-        <div class="box">
-            <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" alt="Icona Pack 1">
-            <h2>UltraPVP Pack</h2>
-            <p>Autore: _Xedo_</p>
-            <br>
-            <a href="https://andrewontilt.github.io/download/packpvp" class="button">Vai all'archivio</a>
-        </div>
-
-        <!-- Secondo Riquadro -->
-        <div class="box">
-            <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" alt="Icona Pack 2">
-            <h2>UltraSMP Pack</h2>
-            <p>Autore: Andr3wOnTilt</p>
-            <br>
-            <a href="https://andrewontilt.github.io/download/packsmp" class="button">Vai all'archivio</a>
-        </div>
+        <header>
+            <h1 class="title">Ultra Packs</h1>
+            <p class="subtitle">Seleziona il tuo pacchetto per iniziare l'avventura!</p>
+        </header>
+        <section class="packs-section">
+            <!-- Primo Pacchetto -->
+            <div class="pack-card">
+                <div class="card-header">
+                    <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" alt="lp">
+                    <br>
+                    <h2>UltraPVP Pack</h2>
+                </div>
+                <div class="card-body">
+                    <p>Autore: <span class="author">_Xedo_</span></p>
+                    <a href="https://andrewontilt.github.io/download/packpvp" class="button">Vai all'archivio</a>
+                </div>
+            </div>
+            <!-- Secondo Pacchetto -->
+            <div class="pack-card">
+                <div class="card-header">
+                    <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" alt="lp">
+                    <br>
+                    <h2>UltraSMP Pack</h2>
+                </div>
+                <div class="card-body">
+                    <p>Autore: <span class="author">Andr3wOnTilt</span></p>
+                    <a href="https://andrewontilt.github.io/download/packsmp" class="button">Vai all'archivio</a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p class="footer-text">© 2024 UltraPacks - Tutti i diritti riservati</p>
+        </footer>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Tutti i diritti riservati.</p>
-    </footer>
-
 </body>
 </html>
