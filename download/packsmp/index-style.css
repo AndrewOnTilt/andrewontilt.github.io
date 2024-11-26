@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     /*background-color: #1e1e1e;*/
     color: #e0e0e0;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    background-image: url('https://andrewontilt.github.io/assets/ultrasmp/sprites/smp_background.jpeg');
     background-size: cover;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .download-btn {
-    background: linear-gradient(135deg, #1d7d00, #0041d9);
+    background-color: #0073e6;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -53,13 +53,10 @@ body {
     cursor: pointer;
     font-size: 14px;
     text-align: center;
-    transition: 0.3s;
 }
 
 .download-btn:hover {
-    background: linear-gradient(135deg, #249a00, #004af7);
-    
-
+    background-color: #005bb5;
 }
 
 .tabs {
