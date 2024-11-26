@@ -187,11 +187,11 @@
 
         document.addEventListener('keydown', (event) => {
             if (event.key === "\\") {
-                localStorage.removeItem('banned');
+                localStorage.removeItem('coomingsoonEasterEgg');
             }
         });
 
-        if (localStorage.getItem('banned') === 'true') {
+        if (localStorage.getItem('coomingsoonEasterEgg') === 'true') {
             document.getElementById("coomingSoon").style.display = "none";
         }
 
