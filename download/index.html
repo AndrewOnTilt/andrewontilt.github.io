@@ -130,13 +130,15 @@
     <div class="main-container">
         <header>
             <h1 class="title">Ultra Packs</h1>
-            <p class="subtitle">Seleziona il tuo pacchetto per iniziare l'avventura!</p>
+            <p class="subtitle" id="all-text">Seleziona il tuo pacchetto per iniziare l'avventura!</p>
         </header>
-        <section class="packs-section">
+        <section class="packs-section" id="packs">
             <!-- Primo Pacchetto -->
             <div class="pack-card">
                 <div class="card-header">
+                    <br>
                     <img src="https://andrewontilt.github.io/assets/ultrapvp/sprites/pvp.png" width="64" height="64" alt="PVP">
+                    <br>
                     <br>
                     <h2>UltraPVP Pack</h2>
                 </div>
@@ -148,7 +150,9 @@
             <!-- Secondo Pacchetto -->
             <div class="pack-card">
                 <div class="card-header">
+                    <br>
                     <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/smp.png" width="64" height="64" alt="SMP">
+                    <br>
                     <br>
                     <h2>UltraSMP Pack</h2>
                 </div>
@@ -157,10 +161,50 @@
                     <a href="https://andrewontilt.github.io/download/packsmp" class="button">Vai all'archivio</a>
                 </div>
             </div>
+            <div class="pack-card">
+                <div class="card-header">
+                    <br>
+                    <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" width="64" height="64" alt="???">
+                    <br>
+                    <br>
+                    <h2 id="a">???</h2>
+                </div>
+                <div class="card-body">
+                    <p>Autore: <span class="author">???</span></p>
+                    <a href="#" class="button" onclick="coomingSoon()">In Arrivo...</a>
+                </div>
+            </div>
         </section>
         <footer>
-            <p class="footer-text">© 2024 UltraPacks - Tutti i diritti riservati</p>
+            <p class="footer-text">© 2024 UltraPacks - Tutti i diritti riservati ai autori.</p>
         </footer>
     </div>
+    <script>
+        const a = document.getElementById("a");
+        const all = document.getElementById("packs");
+        const allTxT = document.getElementById("all-text");
+        var times = 0;
+
+        function coomingSoon()
+        {
+            if (times < 1){
+                a.innerHTML="???";
+            }
+            if (times == 1){
+                a.innerHTML="in arrivo...";
+            }
+            if (times == 5){
+                a.innerHTML="ho detto in arrivo."
+            }
+            if (times == 10){
+                a.innerHTML="SMETTILA!!!"
+            }
+            if (times == 15){
+                all.innerHTML="";
+                allTxT.innerHTML="Vai via, non vendiamo nulla qua."
+            }
+            times = times + 1;
+        };
+    </script>
 </body>
 </html>
