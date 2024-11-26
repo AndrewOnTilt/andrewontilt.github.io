@@ -130,9 +130,9 @@
     <div class="main-container">
         <header>
             <h1 class="title">Ultra Packs</h1>
-            <p class="subtitle" id="all-text">Seleziona il tuo pacchetto per iniziare l'avventura!</p>
+            <p class="subtitle" id="description">Seleziona il tuo pacchetto per iniziare l'avventura!</p>
         </header>
-        <section class="packs-section" id="packs">
+        <section class="packs-section" id="allPacks">
             <!-- Primo Pacchetto -->
             <div class="pack-card">
                 <div class="card-header">
@@ -161,13 +161,13 @@
                     <a href="https://andrewontilt.github.io/download/packsmp" class="button">Vai all'archivio</a>
                 </div>
             </div>
-            <div class="pack-card">
+            <div class="pack-card" id="coomingSoon">
                 <div class="card-header">
                     <br>
                     <img src="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" width="64" height="64" alt="???">
                     <br>
                     <br>
-                    <h2 id="a">???</h2>
+                    <h2 id="text">???</h2>
                 </div>
                 <div class="card-body">
                     <p>Autore: <span class="author">???</span></p>
@@ -180,31 +180,46 @@
         </footer>
     </div>
     <script>
-        const a = document.getElementById("a");
-        const all = document.getElementById("packs");
-        const allTxT = document.getElementById("all-text");
+        const a = document.getElementById("text");
+        const all = document.getElementById("allPacks");
+        const allTxT = document.getElementById("description");
         var times = 0;
 
-        function coomingSoon()
-        {
-            if (times < 1){
-                a.innerHTML="???";
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "\\") {
+                localStorage.removeItem('banned');
             }
-            if (times == 1){
-                a.innerHTML="in arrivo...";
+        });
+
+        if (localStorage.getItem('banned') === 'true') {
+            document.getElementById("coomingSoon").style.display = "none";
+        }
+
+        function coomingSoon() {
+            if (localStorage.getItem('banned') === 'true') {
+                return;
             }
-            if (times == 5){
-                a.innerHTML="ho detto in arrivo."
+
+            if (times < 1) {
+                a.innerHTML = "???";
             }
-            if (times == 10){
-                a.innerHTML="SMETTILA!!!"
+            if (times == 1) {
+                a.innerHTML = "in arrivo...";
             }
-            if (times == 15){
-                all.innerHTML="";
-                allTxT.innerHTML="Vai via, non vendiamo nulla qua."
+            if (times == 5) {
+                a.innerHTML = "ho detto in arrivo.";
             }
-            times = times + 1;
-        };
+            if (times == 10) {
+                a.innerHTML = "SMETTILA!!!";
+            }
+            if (times == 15) {
+                all.innerHTML = "";
+                allTxT.innerHTML = "Vai via, non vendiamo nulla qua.";
+                localStorage.setItem('banned', 'true');
+            }
+
+            times++;
+        }
     </script>
 </body>
 </html>
