@@ -196,7 +196,7 @@
         }
 
         function coomingSoon() {
-            if (localStorage.getItem('banned') === 'true') {
+            if (localStorage.getItem('coomingsoonEasterEgg') === 'true') {
                 return;
             }
 
@@ -215,7 +215,7 @@
             if (times == 15) {
                 all.innerHTML = "";
                 allTxT.innerHTML = "Vai via, non vendiamo nulla qua.";
-                localStorage.setItem('banned', 'true');
+                localStorage.setItem('coomingsoonEasterEgg', 'true');
             }
 
             times++;
