@@ -171,7 +171,7 @@
                 </div>
                 <div class="card-body">
                     <p>Autore: <span class="author">???</span></p>
-                    <a href="#" class="button" onclick="coomingSoon()">In Arrivo...</a>
+                    <a class="button" onclick="coomingSoon()">In Arrivo...</a>
                 </div>
             </div>
         </section>
@@ -188,6 +188,7 @@
         document.addEventListener('keydown', (event) => {
             if (event.key === "\\") {
                 localStorage.removeItem('coomingsoonEasterEgg');
+                document.getElementById("coomingSoon").style.display = "block";
             }
         });
 
