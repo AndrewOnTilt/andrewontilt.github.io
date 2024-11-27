@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultra Packs</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://andrewontilt.github.io/assets/ultrasmp/sprites/lp-icon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -188,15 +187,34 @@
         document.addEventListener('keydown', (event) => {
             if (event.key === "\\") {
                 localStorage.removeItem('coomingsoonEasterEgg');
+                localStorage.removeItem('banned');
+                all.style.display = "block";
+                allTxT.innerHTML = "Seleziona il tuo pacchetto per iniziare l'avventura!";
                 document.getElementById("coomingSoon").style.display = "block";
             }
         });
 
+        if (localStorage.getItem('banned') === 'true') {
+            all.style.display = "none";
+            allTxT.innerHTML = "Ops.. sembra che il tuo dispositivo sia stato bannato...";
+        };
+
         if (localStorage.getItem('coomingsoonEasterEgg') === 'true') {
             document.getElementById("coomingSoon").style.display = "none";
+        };
+
+        function sudo(txt)
+        {
+            if (txt == "bnd"){
+                localStorage.setItem('banned', 'true');
+                all.style.display = "none";
+                allTxT.innerHTML = "Ops.. sembra che il tuo dispositivo sia stato bannato...";
+                console.log("sei stato bannato da questa pagina.");
+            }
         }
 
-        function coomingSoon() {
+        function coomingSoon() 
+        {
             if (localStorage.getItem('coomingsoonEasterEgg') === 'true') {
                 return;
             }
@@ -214,7 +232,7 @@
                 a.innerHTML = "SMETTILA!!!";
             }
             if (times == 15) {
-                all.innerHTML = "";
+                all.style.display = "none";
                 allTxT.innerHTML = "Vai via, non vendiamo nulla qua.";
                 localStorage.setItem('coomingsoonEasterEgg', 'true');
             }
