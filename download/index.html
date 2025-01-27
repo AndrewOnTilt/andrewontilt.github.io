@@ -187,7 +187,7 @@
         document.addEventListener('keydown', (event) => {
             if (event.key === "\\") {
                 localStorage.removeItem('coomingsoonEasterEgg');
-                localStorage.removeItem('banned');
+                localStorage.setItem('banned', 'false');
                 document.getElementById("coomingSoon").style.display = "block";
             }
         });
@@ -208,6 +208,12 @@
                 all.style.display = "none";
                 allTxT.innerHTML = "Ops.. sembra che il tuo dispositivo sia stato bannato...";
                 console.log("sei stato bannato da questa pagina.");
+            }
+            if (txt == "prd"){
+                localStorage.setItem('banned', 'false');
+                all.style.display = "none";
+                allTxT.innerHTML = "Ricarica la pagina";
+                console.log("sei stato sbannato da questa pagina.");
             }
         }
 
